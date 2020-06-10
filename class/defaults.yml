@@ -1,0 +1,3 @@
+parameters:
+  metrics_server:
+    namespace: syn-metrics-server
