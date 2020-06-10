@@ -1,3 +1,9 @@
 parameters:
   metrics_server:
     namespace: syn-metrics-server
+    charts:
+      metrics-server: '2.11.1'
+    images:
+      metrics_server:
+        image: k8s.gcr.io/metrics-server-amd64
+        tag: v0.3.2

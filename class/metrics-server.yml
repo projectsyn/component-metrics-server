@@ -1,11 +1,23 @@
 parameters:
   kapitan:
+    dependencies:
+    - type: https
+      source: https://kubernetes-charts.storage.googleapis.com/metrics-server-${metrics_server:charts:metrics-server}.tgz
+      unpack: True
+      output_path: dependencies/metrics-server/helmcharts
     compile:
       - input_paths:
           - metrics-server/component/app.jsonnet
         input_type: jsonnet
         output_path: apps/
-      - input_paths:
-          - metrics-server/component/main.jsonnet
-        input_type: jsonnet
-        output_path: metrics-server/
+      - output_path: metrics-server/01_helmchart
+        input_type: helm
+        input_paths:
+          - metrics-server/helmcharts/metrics-server
+        helm_values:
+          image:
+            repository: ${metrics_server:images:metrics_server:image}
+            tag: ${metrics_server:images:metrics_server:tag}
+        helm_params:
+          release_name: metrics-server
+          namespace: ${metrics_server:namespace}
