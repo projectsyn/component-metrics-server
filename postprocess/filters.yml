@@ -1,0 +1,7 @@
+filters:
+  - path: metrics-server/01_helmchart/metrics-server/templates
+    type: builtin
+    filter: helm_namespace
+    filterargs:
+      namespace: ${metrics_server:namespace}
+      create_namespace: "true"
