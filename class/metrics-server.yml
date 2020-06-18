@@ -1,10 +1,10 @@
 parameters:
   kapitan:
     dependencies:
-    - type: https
-      source: https://kubernetes-charts.storage.googleapis.com/metrics-server-${metrics_server:charts:metrics-server}.tgz
-      unpack: True
-      output_path: dependencies/metrics-server/helmcharts
+      - type: https
+        source: https://kubernetes-charts.storage.googleapis.com/metrics-server-${metrics_server:charts:metrics-server}.tgz
+        unpack: True
+        output_path: dependencies/metrics-server/helmcharts
     compile:
       - input_paths:
           - metrics-server/component/app.jsonnet
