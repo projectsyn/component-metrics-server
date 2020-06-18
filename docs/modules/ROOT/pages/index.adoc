@@ -1,0 +1,3 @@
+= metrics-server: A Commodore component to manage the Kubernetes Metrics Server
+
+{doctitle} is a Commodore component which installs an manages the https://github.com/kubernetes-sigs/metrics-server[**Kubernetes Metrics Server**] on a cluster.
