@@ -10,6 +10,10 @@ parameters:
           - metrics-server/component/app.jsonnet
         input_type: jsonnet
         output_path: apps/
+      - input_paths:
+          - metrics-server/component/main.jsonnet
+        input_type: jsonnet
+        output_path: metrics-server/
       - output_path: metrics-server/01_helmchart
         input_type: helm
         input_paths:
