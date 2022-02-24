@@ -2,7 +2,7 @@ parameters:
   metrics_server:
     namespace: syn-metrics-server
     charts:
-      metrics-server: '2.12.0'
+      metrics-server: '2.12.1'
     images:
       metrics_server:
         image: k8s.gcr.io/metrics-server/metrics-server
