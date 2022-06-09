@@ -1,6 +1,2 @@
 :global:
-  componentName: metrics-server
-
-docs/antora.yml:
-  name: metrics-server
-  title: Kubernetes Metrics Server
+  componentName: Kubernetes Metrics Server
