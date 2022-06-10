@@ -5,7 +5,7 @@ on:
       - master
 
 env:
-  COMPONENT_NAME: metrics-server
+  COMPONENT_NAME: Kubernetes Metrics Server
 
 jobs:
   linting:
