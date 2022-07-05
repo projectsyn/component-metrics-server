@@ -2,10 +2,10 @@ parameters:
   kapitan:
     dependencies:
       - type: helm
-        source: https://charts.appuio.ch
+        source: ${metrics_server:charts:metrics-server:source}
         chart_name: metrics-server
-        version: ${metrics_server:charts:metrics-server}
-        output_path: dependencies/metrics-server/helmcharts/metrics-server
+        version: ${metrics_server:charts:metrics-server:version}
+        output_path: dependencies/metrics-server/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/
     compile:
       - input_paths:
           - metrics-server/component/app.jsonnet
@@ -18,7 +18,7 @@ parameters:
       - output_path: metrics-server/01_helmchart
         input_type: helm
         input_paths:
-          - metrics-server/helmcharts/metrics-server
+          - metrics-server/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}
         helm_values:
           image:
             repository: ${metrics_server:images:metrics_server:image}
