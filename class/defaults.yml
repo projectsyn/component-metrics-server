@@ -6,4 +6,4 @@ parameters:
     images:
       metrics_server:
         image: k8s.gcr.io/metrics-server/metrics-server
-        tag: v0.3.7
+        tag: v0.6.1
