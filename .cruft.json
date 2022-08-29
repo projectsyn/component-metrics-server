@@ -1,0 +1,21 @@
+{
+  "template": "https://github.com/projectsyn/commodore-component-template.git",
+  "commit": "e6c4fd69190db1ad12e941d578b9423d0e2f993c",
+  "checkout": "main",
+  "context": {
+    "cookiecutter": {
+      "name": "Kubernetes Metrics Server",
+      "slug": "metrics-server",
+      "parameter_key": "metrics_server",
+      "test_cases": "defaults",
+      "add_golden": "n",
+      "add_matrix": "n",
+      "add_go_unit": "n",
+      "github_owner": "projectsyn",
+      "github_name": "component-metrics-server",
+      "github_url": "https://github.com/projectsyn/component-metrics-server",
+      "_template": "https://github.com/projectsyn/commodore-component-template.git"
+    }
+  },
+  "directory": null
+}
