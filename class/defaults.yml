@@ -1,5 +1,7 @@
 parameters:
   metrics_server:
+    =_metadata:
+      multi_tenant: true
     namespace: syn-metrics-server
     charts:
       metrics-server:
