@@ -10,4 +10,4 @@ parameters:
     images:
       metrics_server:
         image: registry.k8s.io/metrics-server/metrics-server
-        tag: v0.6.1
+        tag: v0.8.0
