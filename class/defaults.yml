@@ -6,7 +6,7 @@ parameters:
     charts:
       metrics-server:
         source: https://kubernetes-sigs.github.io/metrics-server
-        version: '3.8.4'
+        version: '3.13.0'
     images:
       metrics_server:
         image: registry.k8s.io/metrics-server/metrics-server
