@@ -2,12 +2,15 @@ parameters:
   metrics_server:
     =_metadata:
       multi_tenant: true
+
     namespace: syn-metrics-server
+
     charts:
       metrics-server:
         source: https://kubernetes-sigs.github.io/metrics-server
-        version: '3.8.4'
+        version: '3.14.0'
+
     images:
       metrics_server:
         image: registry.k8s.io/metrics-server/metrics-server
-        tag: v0.6.1
+        
