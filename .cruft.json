@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/projectsyn/commodore-component-template.git",
-  "commit": "5ae57721558399419f867334e31d23a7f7a892ba",
+  "commit": "81efc49d66984b18dba6fee48b8fc213c69e9a55",
   "checkout": "main",
   "context": {
     "cookiecutter": {
@@ -10,8 +10,8 @@
       "test_cases": "defaults",
       "add_lib": "n",
       "add_pp": "n",
-      "add_golden": "n",
-      "add_matrix": "n",
+      "add_golden": "y",
+      "add_matrix": "y",
       "add_go_unit": "n",
       "automerge_patch": "y",
       "automerge_patch_v0": "n",
@@ -25,7 +25,7 @@
       "github_name": "component-metrics-server",
       "github_url": "https://github.com/projectsyn/component-metrics-server",
       "_template": "https://github.com/projectsyn/commodore-component-template.git",
-      "_commit": "5ae57721558399419f867334e31d23a7f7a892ba"
+      "_commit": "81efc49d66984b18dba6fee48b8fc213c69e9a55"
     }
   },
   "directory": null
