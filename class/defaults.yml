@@ -12,5 +12,7 @@ parameters:
 
     images:
       metrics_server:
-        image: registry.k8s.io/metrics-server/metrics-server
-        tag: v0.6.1
+        registry: registry.k8s.io
+        repository: metrics-server/metrics-server
+
+    helm_values: {}

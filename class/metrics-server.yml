@@ -5,24 +5,29 @@ parameters:
         source: ${metrics_server:charts:metrics-server:source}
         chart_name: metrics-server
         version: ${metrics_server:charts:metrics-server:version}
-        output_path: dependencies/metrics-server/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/
+        output_path: ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/
     compile:
       - input_paths:
-          - metrics-server/component/app.jsonnet
+          - ${_base_directory}/component/app.jsonnet
         input_type: jsonnet
         output_path: .
       - input_paths:
-          - metrics-server/component/main.jsonnet
+          - ${_base_directory}/component/main.jsonnet
         input_type: jsonnet
-        output_path: metrics-server/
+        output_path: ${_instance}/
+
+      # Helm chart
+      - input_type: jsonnet
+        input_paths:
+          - ${_base_directory}/component/helm.jsonnet
+        output_path: ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/
       - output_path: metrics-server/01_helmchart
         input_type: helm
         input_paths:
-          - metrics-server/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}
-        helm_values:
-          image:
-            repository: ${metrics_server:images:metrics_server:image}
-            tag: ${metrics_server:images:metrics_server:tag}
+          - ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}
+        helm_values_files:
+          - ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/metrics-values.yaml
+          - ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/metrics-overrides.yaml
         helm_params:
           release_name: metrics-server
           namespace: ${metrics_server:namespace}
