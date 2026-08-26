@@ -15,19 +15,11 @@ parameters:
           - ${_base_directory}/component/main.jsonnet
         input_type: jsonnet
         output_path: ${_instance}/
-
-      # Helm chart
-      - input_type: jsonnet
-        input_paths:
-          - ${_base_directory}/component/helm.jsonnet
-        output_path: ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/
       - output_path: metrics-server/01_helmchart
         input_type: helm
         input_paths:
           - ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}
-        helm_values_files:
-          - ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/metrics-values.yaml
-          - ${_base_directory}/helmcharts/metrics-server/${metrics_server:charts:metrics-server:version}/metrics-overrides.yaml
+        helm_values: ${metrics_server:helm_values}
         helm_params:
           release_name: metrics-server
           namespace: ${metrics_server:namespace}
