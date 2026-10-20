@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/projectsyn/commodore-component-template.git",
-  "commit": "81efc49d66984b18dba6fee48b8fc213c69e9a55",
+  "commit": "e181d48cf389cc0db56825e47044d881c8e91e4d",
   "checkout": "main",
   "context": {
     "cookiecutter": {
@@ -25,7 +25,7 @@
       "github_name": "component-metrics-server",
       "github_url": "https://github.com/projectsyn/component-metrics-server",
       "_template": "https://github.com/projectsyn/commodore-component-template.git",
-      "_commit": "81efc49d66984b18dba6fee48b8fc213c69e9a55"
+      "_commit": "e181d48cf389cc0db56825e47044d881c8e91e4d"
     }
   },
   "directory": null
